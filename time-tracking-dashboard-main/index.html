@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Frontend Mentor | Time tracking dashboard</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/all.min.css ">
+
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <div class="dashboard">
+
+      <div class="container">
+        
+        <div class="user">
+          <div class="userAcc">
+
+            <div>
+              <img src="images/image-jeremy.png" alt="userImage">
+  
+              <div class="userName">
+                <p>Report for</p>
+                <h2>Jeremy<br>Robson</h2>
+              </div>
+            </div>
+            
+          </div>
+  
+          <div class="time">
+            <div>
+              <ul>
+                <li id="daily">Daily</li>
+                <li id="weekly">Weekly</li>
+                <li id="monthly">Monthly</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+  
+  
+        <div class="work card">
+          <div class="icon">
+            <i class="fa-solid fa-briefcase"></i>
+          </div>
+  
+          <div class="data">
+
+            <div class="pd">
+              <div>
+                <h3>Work</h3>
+
+                <button class="shareBtn disNone">SHARE</button>
+                <i class="fa-solid fa-ellipsis shareIcon"></i>
+              </div>
+    
+              <h2 class="counter">0hrs</h2>
+              <p class="last">-----</p>
+            </div>
+            
+          </div>
+        </div>
+  
+        
+        <div class="play card">
+          <div class="icon">
+            <i class="fa-solid fa-gamepad"></i>
+          </div>
+  
+          <div class="data">
+
+            <div class="pd">
+              <div>
+                <h3>Play</h3>
+
+                <button class="shareBtn disNone">SHARE</button>
+                <i class="fa-solid fa-ellipsis shareIcon"></i>
+              </div>
+
+              <h2 class="counter">0hrs</h2>
+              <p class="last">-----</p>
+            </div>
+  
+          </div>
+        </div>
+  
+  
+        <div class="study card">
+          <div class="icon">
+            <i class="fa-solid fa-book"></i>
+          </div>
+  
+          <div class="data">
+
+            <div class="pd">
+              <div>
+                <h3>Study</h3>
+
+                <button class="shareBtn disNone">SHARE</button>
+                <i class="fa-solid fa-ellipsis shareIcon"></i>
+              </div>
+
+              <h2 class="counter">0hrs</h2>
+              <p class="last">-----</p>
+            </div>
+  
+          </div>
+        </div>
+  
+  
+        <div class="exercise card">
+          <div class="icon">
+            <i class="fa-solid fa-dumbbell"></i>
+          </div>
+  
+          <div class="data">
+            
+            <div class="pd">
+              <div>
+                <h3>Exercise</h3>
+
+                <button class="shareBtn disNone">SHARE4</button>
+                <i class="fa-solid fa-ellipsis shareIcon"></i>
+              </div>
+
+              <h2 class="counter">0hrs</h2>
+              <p class="last">-----</p>
+            </div>
+  
+          </div>
+        </div>
+  
+  
+        <div class="social card">
+          <div class="icon">
+            <i class="fa-solid fa-comment"></i>
+          </div>
+  
+          <div class="data">
+            
+            <div class="pd">
+              <div>
+                <h3>Social</h3>
+
+                <button class="shareBtn disNone">SHARE5</button>
+                <i class="fa-solid fa-ellipsis shareIcon"></i>
+              </div>
+
+              <h2 class="counter">0hrs</h2>
+              <p class="last">-----</p>
+            </div>
+  
+          </div>
+        </div>
+  
+  
+        <div class="selfCare card">
+          <div class="icon">
+            <i class="fa-solid fa-heart"></i>
+          </div>
+  
+          <div class="data">
+
+            <div class="pd">
+              <div>
+                <h3>Self Care</h3>
+
+                <button class="shareBtn disNone">SHARE6</button>
+                <i class="fa-solid fa-ellipsis shareIcon"></i>
+              </div>
+    
+              <h2 class="counter">0hrs</h2>
+              <p class="last">-----</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+      
+  </body>
+
+  <script>
+
+    let daily = document.getElementById("daily");
+    let weekly = document.getElementById("weekly");
+    let monthly = document.getElementById("monthly");
+
+
+    let counter = document.querySelectorAll(".counter");
+    let last = document.querySelectorAll(".last");
+
+    daily.onclick = function() {
+      
+      /* Can Do it with this way */
+      counter[0].innerHTML = "10hrs";
+      counter[1].innerHTML = "7hrs";
+      counter[2].innerHTML = "14hrs";
+      counter[3].innerHTML = "4hrs";
+      counter[4].innerHTML = "3hrs";
+      counter[5].innerHTML = "2hrs";
+
+      last[0].innerHTML = "Last Day - 9hrs";
+      last[1].innerHTML = "Last Day - 10hrs";
+      last[2].innerHTML = "Last Day - 8hrs";
+      last[3].innerHTML = "Last Day - 5hrs";
+      last[4].innerHTML = "Last Day - 4.5hrs";
+      last[5].innerHTML = "Last Day - 0hrs";
+    };
+
+    /* Or with this way */
+    weekly.onclick = function() {
+      for(let i = 0; i < counter.length; i++) {
+        counter[i].innerHTML = "25hrs"
+      };
+
+      for(let i = 0; i < last.length; i++) {
+        last[i].innerHTML = "Last Week - 20hrs"
+      };
+    };
+
+    monthly.onclick = function() {
+      for(let i = 0; i < counter.length; i++) {
+        counter[i].innerHTML = "40hrs"
+      };
+
+      for(let i = 0; i < last.length; i++) {
+        last[i].innerHTML = "Last Month - 35hrs"
+      };
+    };
+
+
+
+    let shareBtn = document.querySelectorAll(".shareBtn");
+
+    let data = document.querySelectorAll(".data");
+    let pd = document.querySelectorAll(".pd");
+
+    data.forEach( pd => {
+    pd.addEventListener('click', (e) => {
+        if (e.target.tagName !== 'I') return;
+
+        console.log(this)
+        
+      })
+    })
+  </script>
+
+</html> 

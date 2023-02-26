@@ -1,0 +1,274 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Rubik
+}
+
+div {
+    color: #fff
+}
+
+body {
+    background-color: hsl(226deg 40% 15%);
+    width: 100%;
+    height: 100vh
+}
+
+.dashboard {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: auto auto;
+    grid-template-areas:
+    'user work play study'
+    'user exercise social selfCare';
+    grid-gap: 1.8em 1.5em;
+    width: 65%;
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
+}
+
+.user {
+    grid-area: user;
+    width: 13.5em;
+    
+}
+
+.user .userAcc {
+    background-color: hsl(246, 80%, 60%);
+    height: 70%;
+    border-radius: 15px;
+    margin-bottom: -15px;
+    z-index: 2;
+    position: relative;
+    transition: 0.4s
+}
+.user:hover .userAcc {
+    background-color: hsl(246deg 75% 54%);
+    cursor: pointer
+}
+
+.user .userAcc > div {
+    padding: 25px 20px;
+}
+
+.user img {
+    width: 4em;
+    border: 3px solid #fff;
+    border-radius: 50%;
+}
+
+.user .userName{
+    margin-top: 25px
+}
+
+.user .userName p {
+    font-size: 14px;
+    color: #ffffff80;
+    margin-bottom: 4px
+}
+
+.user .userName h2 {
+    font-weight: 100;
+    font-size: 28px;
+    letter-spacing: 0.5px
+}
+
+.user .time {
+    background: hsl(235, 46%, 20%);
+    height: 33.5%;
+    border-radius: 15px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+.user .time > div {
+    padding: 25px 20px
+}
+
+.user .time ul{
+    list-style: none;
+    line-height: 1.8em;
+    padding: 10px 0;
+}
+
+.user .time ul li {
+      color: hsl(235deg 42% 77%);
+      width: 3em;
+      cursor: pointer
+}
+.user .time ul li:hover {
+    color: #fff
+}
+
+
+
+.card {
+    width: 13.5em
+}
+
+.card .icon {
+    height: 2.5em;
+    border-radius: 10px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0
+}
+
+.card .icon i {
+    position: relative;
+    left: 75%;
+    color: #13131375;
+    font-size: 45px;
+    transform: rotate(35deg);
+    transition: 0.4s
+}
+.card:hover .icon i {
+    left: 5%;
+    transform: rotate(-35deg);
+}
+
+.card .data {
+    background-color: hsl(235, 46%, 20%);
+    position: relative;
+    margin-top: -8px;
+    border-radius: 10px;
+    height: 10.5em;
+    box-shadow: 4px 5px 10px -4px hsl(235deg 28% 51%);
+    transition: 0.4s
+}
+.card .data:hover {
+    background-color: hsl(235, 45%, 28%);
+    cursor: pointer;
+}
+
+.card .data .pd {
+    padding: 20px
+}
+
+.card .data .pd > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px
+}
+
+.card .data h3 {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.card .data .shareBtn {
+    background-color: hsl(246deg 39% 41%);
+    color: #fff;
+    font-weight: 400;
+    font-size: 12px;
+    border: none;
+    position: absolute;
+    right: 0px;
+    top: -8px;
+    padding: 4px 5px;
+    border-radius: 7px;
+    z-index: 3
+}
+.card .data .shareBtn:hover {
+    background-color: hsl(246, 46%, 36%);
+    cursor: pointer;
+}
+
+.disBlock {
+    display: block
+}
+.disNone {
+    display: none
+}
+
+
+.card .data i {
+    color: hsl(235deg 42% 77%);
+    cursor: pointer
+}
+.card .data i:hover {
+    color: #fff
+}
+
+.card .data h2 {
+    font-size: 2.8em;
+    font-weight: 100;
+    margin: 10px 0;
+}
+
+.card .data p {
+    color: hsl(235deg 42% 77%);
+    font-size: 14px;
+}
+
+
+.work {
+    grid-area: work;
+}
+.work .icon {
+    background-color: hsl(15, 100%, 70%)   
+}
+
+.play {
+    grid-area: play;
+}
+.play .icon {
+    background-color: hsl(195, 74%, 62%)
+}
+
+.study {
+    grid-area: study;
+}
+.study .icon {
+    background-color: hsl(348, 100%, 68%)
+}
+
+.exercise {
+    grid-area: exercise;
+}
+.exercise .icon {
+    background-color: hsl(145, 58%, 55%)
+}
+
+.social {
+    grid-area: social;
+}
+.social .icon {
+    background-color: hsl(264, 64%, 52%)
+}
+
+.selfCare {
+    grid-area: selfCare
+}
+.selfCare .icon {
+    background-color: hsl(43, 84%, 65%);
+}
+
+
+
+
+@media (max-width: 1200px) {
+    .container {
+        left: 42%
+    }
+}
+
+
+@media (max-width: 1050px) {
+    .container {
+        grid-template-columns: repeat(2, auto);
+        grid-gap: 1.8em 1.5em;
+        grid-template-areas: 
+        'user'
+        'work play'
+        'study exercise'
+        'social selfCare';
+    }
+}
